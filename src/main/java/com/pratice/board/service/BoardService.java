@@ -69,7 +69,8 @@ public class BoardService {
     }
 
     public List<BoardDTO> findBoardList(TitleSearchCond titleSearchCond, PageDTO pageDTO) {
-        Long totalCount = boardRepository.getTotalCount();
+//        Long totalCount = boardRepository.getTotalCount();
+        Long totalCount = boardRepository.getTotalCount(titleSearchCond);
         pageDTO.setRow();
         pageDTO.setNum(totalCount);
         return boardRepository.findAll(titleSearchCond, pageDTO);

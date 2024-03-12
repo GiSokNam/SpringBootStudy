@@ -48,8 +48,12 @@ public class MybatisBoardRepository implements BoardRepository {
     public void update(BoardDTO boardDTO) {
         boardMapper.update(boardDTO);
     }
-    @Override
+    /*@Override
     public Long getTotalCount() {
         return boardMapper.getTotalCount();
+    }*/
+    @Override
+    public Long getTotalCount(TitleSearchCond titleSearchCond) {
+        return boardMapper.getTotalCount(titleSearchCond);
     }
 }

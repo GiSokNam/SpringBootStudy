@@ -17,6 +17,7 @@ public interface BoardRepository {
     List<BoardFileDTO> findFile(Long id);
     void delete(Long id);
     void update(BoardDTO boardDTO);
-    Long getTotalCount();
+//    Long getTotalCount();
+    Long getTotalCount(TitleSearchCond titleSearchCond);
 
 }

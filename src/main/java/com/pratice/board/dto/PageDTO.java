@@ -19,7 +19,7 @@ public class PageDTO {
     public PageDTO() {
         this.page=1L;
         this.perPage=2L;
-        this.perBlock=3L;
+        this.perBlock=2L;
     }
 
     public void setRow() {

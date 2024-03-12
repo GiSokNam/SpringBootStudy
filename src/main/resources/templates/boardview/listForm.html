@@ -73,11 +73,12 @@
     <div>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item" th:if="${page.pre != null}" th:value="${page.pre}" id="pre">
+                <li class="page-item" th:if="${page.pre != null and page.page > 1}" th:value="${page.pre}" id="pre">
                     <a class="page-link" th:href="@{/board/list(page=${page.page-1})}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
+
 
                 <th:block th:each="i : ${#numbers.sequence(page.startNum, page.lastNum)}">
                     <li class="page-item" th:class="${page.page == i} ? 'active' : ''">
@@ -85,7 +86,7 @@
                     </li>
                 </th:block>
 
-                <li class="page-item" th:if="${page.next != null}" th:value="${page.next}" id="next">
+                <li class="page-item" th:if="${page.next != null and page.page < page.totalPage}" th:value="${page.next}" id="next">
                     <a class="page-link" th:href="@{/board/list(page=${page.page+1})}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
